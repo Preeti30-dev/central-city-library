@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Central Library - Books</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span>CITY</span>
+                <span>CENTRAL</span>
+                <span>LIBRARY</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="login.html">Account</a></li>
+            </ul>
+            <button class="loan-btn">Loan a book!</button>
+        </div>
+        <!-- Search bar removed -->
+    </nav>
+
+    <!-- New Books Section -->
+    <section class="new-books container">
+        <h2>Explore Our Collection</h2>
+        <div class="search-bar" style="margin-bottom: 40px;">
+            <input type="text" id="bookSearch" placeholder="Search books by title or author...">
+            <button onclick="filterBooks()">🔍</button>
+        </div>
+        <div class="books-grid" id="booksGrid">
+            <div class="book-card" data-title="The Midnight Library" data-author="Matt Haig">
+                <img src="images/the-midnight-library.webp" alt="The Midnight Library">
+                <h4>The Midnight Library</h4>
+                <p>Matt Haig</p>
+                <small>A novel about life's infinite possibilities</small>
+            </div>
+            <div class="book-card" data-title="Atomic Habits" data-author="James Clear">
+                <img src="images/atomic-habits.webp" alt="Atomic Habits">
+                <h4>Atomic Habits</h4>
+                <p>James Clear</p>
+                <small>Transform your life with tiny changes</small>
+            </div>
+            <div class="book-card" data-title="The Psychology of Money" data-author="Morgan Housel">
+                <img src="images/the-psychology-of-money.webp" alt="The Psychology of Money">
+                <h4>The Psychology of Money</h4>
+                <p>Morgan Housel</p>
+                <small>Timeless lessons on wealth and decision-making</small>
+            </div>
+            <div class="book-card" data-title="Dune" data-author="Frank Herbert">
+                <img src="images/dune.webp" alt="Dune">
+                <h4>Dune</h4>
+                <p>Frank Herbert</p>
+                <small>Epic science fiction masterpiece</small>
+            </div>
+            <div class="book-card" data-title="The Name of the Wind" data-author="Patrick Rothfuss">
+                <img src="images/the-name-of-the-wind.webp" alt="The Name of the Wind">
+                <h4>The Name of the Wind</h4>
+                <p>Patrick Rothfuss</p>
+                <small>A young man's journey to become a legendary figure</small>
+            </div>
+            <div class="book-card" data-title="Project Hail Mary" data-author="Andy Weir">
+                <img src="images/project-hail-mary.webp" alt="Project Hail Mary">
+                <h4>Project Hail Mary</h4>
+                <p>Andy Weir</p>
+                <small>A lone astronaut's mission to save humanity</small>
+            </div>
+            <div class="book-card" data-title="The Silent Patient" data-author="Alex Michaelides">
+                <img src="images/the-silent-patient.webp" alt="The Silent Patient">
+                <h4>The Silent Patient</h4>
+                <p>Alex Michaelides</p>
+                <small>A psychological thriller about a woman's silence</small>
+            </div>
+            <div class="book-card" data-title="Educated" data-author="Tara Westover">
+                <img src="images/educated.webp" alt="Educated">
+                <h4>Educated</h4>
+                <p>Tara Westover</p>
+                <small>A memoir of self-invention and belonging</small>
+            </div>
+            <div class="book-card" data-title="The Song of Achilles" data-author="Madeline Miller">
+                <img src="images/the-song-of-achilles.webp" alt="The Song of Achilles">
+                <h4>The Song of Achilles</h4>
+                <p>Madeline Miller</p>
+                <small>The legend of Achilles retold</small>
+            </div>
+            <div class="book-card" data-title="Circe" data-author="Madeline Miller">
+                <img src="images/circe.webp" alt="Circe">
+                <h4>Circe</h4>
+                <p>Madeline Miller</p>
+                <small>The story of the witch from The Odyssey</small>
+            </div>
+            <div class="book-card" data-title="The Four Winds" data-author="Kristin Hannah">
+                <img src="images/the-four-winds.webp" alt="The Four Winds">
+                <h4>The Four Winds</h4>
+                <p>Kristin Hannah</p>
+                <small>A woman's struggle during the Great Depression</small>
+            </div>
+            <div class="book-card" data-title="Where the Crawdads Sing" data-author="Delia Owens">
+                <img src="images/where-the-crawdads-sing.webp" alt="Where the Crawdads Sing">
+                <h4>Where the Crawdads Sing</h4>
+                <p>Delia Owens</p>
+                <small>A mystery set in the marshes of North Carolina</small>
+            </div>
+            <div class="book-card" data-title="The Vanishing Half" data-author="Brit Bennett">
+                <img src="images/the-vanishing-half.webp" alt="The Vanishing Half">
+                <h4>The Vanishing Half</h4>
+                <p>Brit Bennett</p>
+                <small>The lives of twin sisters diverge in unexpected ways</small>
+            </div>
+            <div class="book-card" data-title="Klara and the Sun" data-author="Kazuo Ishiguro">
+                <img src="images/klara-and-the-sun.webp" alt="Klara and the Sun">
+                <h4>Klara and the Sun</h4>
+                <p>Kazuo Ishiguro</p>
+                <small>An Artificial Friend observes human love</small>
+            </div>
+            <div class="book-card" data-title="The Guest List" data-author="Lucy Foley">
+                <img src="images/the-guest-list.webp" alt="The Guest List">
+                <h4>The Guest List</h4>
+                <p>Lucy Foley</p>
+                <small>A wedding turns deadly on a remote island</small>
+            </div>
+            <div class="book-card" data-title="The Thursday Murder Club" data-author="Richard Osman">
+                <img src="images/the-thursday-murder-club.webp" alt="The Thursday Murder Club">
+                <h4>The Thursday Murder Club</h4>
+                <p>Richard Osman</p>
+                <small>Senior citizens solve a murder mystery</small>
+            </div>
+            <div class="book-card" data-title="Hamnet" data-author="Maggie O'Farrell">
+                <img src="images/hamnet.webp" alt="Hamnet">
+                <h4>Hamnet</h4>
+                <p>Maggie O'Farrell</p>
+                <small>The death of Shakespeare's son and its impact</small>
+            </div>
+            <div class="book-card" data-title="The Lincoln Highway" data-author="Amor Towles">
+                <img src="images/the-lincoln-highway.webp" alt="The Lincoln Highway">
+                <h4>The Lincoln Highway</h4>
+                <p>Amor Towles</p>
+                <small>A road trip across 1950s America</small>
+            </div>
+            <div class="book-card" data-title="Cloud Cuckoo Land" data-author="Anthony Doerr">
+                <img src="images/cloud-cuckoo-land.webp" alt="Cloud Cuckoo Land">
+                <h4>Cloud Cuckoo Land</h4>
+                <p>Anthony Doerr</p>
+                <small>Stories spanning centuries connected by a book</small>
+            </div>
+            <div class="book-card" data-title="The Seven Husbands of Evelyn Hugo" data-author="Taylor Jenkins Reid">
+                <img src="images/the-seven-husbands-of-evelyn-hugo.webp" alt="The Seven Husbands of Evelyn Hugo">
+                <h4>The Seven Husbands of Evelyn Hugo</h4>
+                <p>Taylor Jenkins Reid</p>
+                <small>A reclusive Hollywood icon tells her story</small>
+            </div>
+            <div class="book-card" data-title="Normal People" data-author="Sally Rooney">
+                <img src="images/normal-people.webp" alt="Normal People">
+                <h4>Normal People</h4>
+                <p>Sally Rooney</p>
+                <small>The complex relationship between two young people</small>
+            </div>
+            <div class="book-card" data-title="The Midnight Library" data-author="Matt Haig">
+                <img src="images/the-midnight-library.webp" alt="The Midnight Library">
+                <h4>The Midnight Library</h4>
+                <p>Matt Haig</p>
+                <small>Exploring life's infinite possibilities</small>
+            </div>
+            <div class="book-card" data-title="Sapiens" data-author="Yuval Noah Harari">
+                <img src="images/sapiens.webp" alt="Sapiens">
+                <h4>Sapiens</h4>
+                <p>Yuval Noah Harari</p>
+                <small>A brief history of humankind</small>
+            </div>
+            <div class="book-card" data-title="The Subtle Art of Not Giving a F*ck" data-author="Mark Manson">
+                <img src="images/the-subtle-art-of-not-giving-a-f-ck.webp" alt="The Subtle Art of Not Giving a F*ck">
+                <h4>The Subtle Art of Not Giving a F*ck</h4>
+                <p>Mark Manson</p>
+                <small>A counterintuitive approach to living a good life</small>
+            </div>
+            <div class="book-card" data-title="Becoming" data-author="Michelle Obama">
+                <img src="images/becoming.webp" alt="Becoming">
+                <h4>Becoming</h4>
+                <p>Michelle Obama</p>
+                <small>A memoir of the former First Lady</small>
+            </div>
+            <div class="book-card" data-title="The Alchemist" data-author="Paulo Coelho">
+                <img src="images/the-alchemist.webp" alt="The Alchemist">
+                <h4>The Alchemist</h4>
+                <p>Paulo Coelho</p>
+                <small>A shepherd boy's journey to find his destiny</small>
+            </div>
+            <div class="book-card" data-title="The Catcher in the Rye" data-author="J.D. Salinger">
+                <img src="images/the-catcher-in-the-rye.webp" alt="The Catcher in the Rye">
+                <h4>The Catcher in the Rye</h4>
+                <p>J.D. Salinger</p>
+                <small>A controversial coming-of-age story</small>
+            </div>
+            <div class="book-card" data-title="1984" data-author="George Orwell">
+                <img src="images/1984.webp" alt="1984">
+                <h4>1984</h4>
+                <p>George Orwell</p>
+                <small>A dystopian social science fiction novel</small>
+            </div>
+            <div class="book-card" data-title="To Kill a Mockingbird" data-author="Harper Lee">
+                <img src="images/to-kill-a-mockingbird.webp" alt="To Kill a Mockingbird">
+                <h4>To Kill a Mockingbird</h4>
+                <p>Harper Lee</p>
+                <small>A gripping tale of racial injustice</small>
+            </div>
+            <div class="book-card" data-title="Pride and Prejudice" data-author="Jane Austen">
+                <img src="images/pride-and-prejudice.webp" alt="Pride and Prejudice">
+                <h4>Pride and Prejudice</h4>
+                <p>Jane Austen</p>
+                <small>A romantic novel of manners</small>
+            </div>
+            <div class="book-card" data-title="The Great Gatsby" data-author="F. Scott Fitzgerald">
+                <img src="images/the-great-gatsby.webp" alt="The Great Gatsby">
+                <h4>The Great Gatsby</h4>
+                <p>F. Scott Fitzgerald</p>
+                <small>A critique of the American Dream</small>
+            </div>
+            <div class="book-card" data-title="Harry Potter and the Sorcerer's Stone" data-author="J.K. Rowling">
+                <img src="images/harry-potter-and-the-sorcerer's-stone.webp" alt="Harry Potter and the Sorcerer's Stone">
+                <h4>Harry Potter and the Sorcerer's Stone</h4>
+                <p>J.K. Rowling</p>
+                <small>The beginning of a magical adventure</small>
+            </div>
+            <div class="book-card" data-title="The Hobbit" data-author="J.R.R. Tolkien">
+                <img src="images/the-hobbit.webp" alt="The Hobbit">
+                <h4>The Hobbit</h4>
+                <p>J.R.R. Tolkien</p>
+                <small>A fantasy adventure in Middle-earth</small>
+            </div>
+            <div class="book-card" data-title="The Lord of the Rings" data-author="J.R.R. Tolkien">
+                <img src="images/the-lord-of-the-rings.webp" alt="The Lord of the Rings">
+                <h4>The Lord of the Rings</h4>
+                <p>J.R.R. Tolkien</p>
+                <small>The epic quest to destroy the One Ring</small>
+            </div>
+            <div class="book-card" data-title="The Chronicles of Narnia" data-author="C.S. Lewis">
+                <img src="images/the-chronicles-of-narnia.webp" alt="The Chronicles of Narnia">
+                <h4>The Chronicles of Narnia</h4>
+                <p>C.S. Lewis</p>
+                <small>A magical world discovered through a wardrobe</small>
+            </div>
+            <div class="book-card" data-title="The Hunger Games" data-author="Suzanne Collins">
+                <img src="images/the-hunger-games.webp" alt="The Hunger Games">
+                <h4>The Hunger Games</h4>
+                <p>Suzanne Collins</p>
+                <small>A dystopian adventure in Panem</small>
+            </div>
+            <div class="book-card" data-title="Divergent" data-author="Veronica Roth">
+                <img src="images/divergent.webp" alt="Divergent">
+                <h4>Divergent</h4>
+                <p>Veronica Roth</p>
+                <small>A society divided by personality traits</small>
+            </div>
+            <div class="book-card" data-title="The Maze Runner" data-author="James Dashner">
+                <img src="images/the-maze-runner.webp" alt="The Maze Runner">
+                <h4>The Maze Runner</h4>
+                <p>James Dashner</p>
+                <small>Teenagers trapped in a deadly maze</small>
+            </div>
+            <div class="book-card" data-title="The Fault in Our Stars" data-author="John Green">
+                <img src="images/the-fault-in-our-stars.webp" alt="The Fault in Our Stars">
+                <h4>The Fault in Our Stars</h4>
+                <p>John Green</p>
+                <small>A love story about two teenagers with cancer</small>
+            </div>
+            <div class="book-card" data-title="The Perks of Being a Wallflower" data-author="Stephen Chbosky">
+                <img src="images/the-perks-of-being-a-wallflower.webp" alt="The Perks of Being a Wallflower">
+                <h4>The Perks of Being a Wallflower</h4>
+                <p>Stephen Chbosky</p>
+                <small>A coming-of-age story through letters</small>
+            </div>
+            <div class="book-card" data-title="The Book Thief" data-author="Markus Zusak">
+                <img src="images/the-book-thief.webp" alt="The Book Thief">
+                <h4>The Book Thief</h4>
+                <p>Markus Zusak</p>
+                <small>A story of a girl who steals books during WWII</small>
+            </div>
+            <div class="book-card" data-title="The Kite Runner" data-author="Khaled Hosseini">
+                <img src="images/the-kite-runner.webp" alt="The Kite Runner">
+                <h4>The Kite Runner</h4>
+                <p>Khaled Hosseini</p>
+                <small>A story of friendship, betrayal, and redemption</small>
+            </div>
+            <div class="book-card" data-title="A Thousand Splendid Suns" data-author="Khaled Hosseini">
+                <img src="images/a-thousand-splendid-suns.webp" alt="A Thousand Splendid Suns">
+                <h4>A Thousand Splendid Suns</h4>
+                <p>Khaled Hosseini</p>
+                <small>The lives of two women in Afghanistan</small>
+            </div>
+            <div class="book-card" data-title="The Help" data-author="Kathryn Stockett">
+                <img src="images/the-help.webp" alt="The Help">
+                <h4>The Help</h4>
+                <p>Kathryn Stockett</p>
+                <small>Black maids working in white households in 1960s Mississippi</small>
+            </div>
+            <div class="book-card" data-title="The Girl with the Dragon Tattoo" data-author="Stieg Larsson">
+                <img src="images/the-girl-with-the-dragon-tattoo.webp" alt="The Girl with the Dragon Tattoo">
+                <h4>The Girl with the Dragon Tattoo</h4>
+                <p>Stieg Larsson</p>
+                <small>A journalist and hacker investigate a disappearance</small>
+            </div>
+            <div class="book-card" data-title="Gone Girl" data-author="Gillian Flynn">
+                <img src="images/gone-girl.jpg" alt="Gone Girl">
+                <h4>Gone Girl</h4>
+                <p>Gillian Flynn</p>
+                <small>A psychological thriller about a missing wife</small>
+            </div>
+            <div class="book-card" data-title="The Da Vinci Code" data-author="Dan Brown">
+                <img src="images/the-da-vinci-code.webp" alt="The Da Vinci Code">
+                <h4>The Da Vinci Code</h4>
+                <p>Dan Brown</p>
+                <small>A mystery involving secret societies and ancient codes</small>
+            </div>
+            <div class="book-card" data-title="Angels & Demons" data-author="Dan Brown">
+                <img src="images/angels-&-demons.webp" alt="Angels & Demons">
+                <h4>Angels & Demons</h4>
+                <p>Dan Brown</p>
+                <small>A symbologist races to stop the Illuminati</small>
+            </div>
+            <div class="book-card" data-title="The Bourne Identity" data-author="Robert Ludlum">
+                <img src="images/the-bourne-identity.webp" alt="The Bourne Identity">
+                <h4>The Bourne Identity</h4>
+                <p>Robert Ludlum</p>
+                <small>A man with amnesia discovers he's a trained assassin</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h3>Stay Connected with Stories</h3>
+            <p>Be the first to know about new arrivals, exclusive events, and literary discoveries. Join our community of book lovers and never miss a great read. Get personalized recommendations, early access to new releases, and invitations to exclusive author events.</p>
+            <form>
+                <input type="email" placeholder="Enter your email address">
+                <button class="btn">Join Our Community</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <h4>Get Involved</h4>
+                <ul>
+                    <li><a href="#">Volunteer</a></li>
+                    <li><a href="#">Donate</a></li>
+                    <li><a href="#">Partner with us</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>About CCL</h4>
+                <ul>
+                    <li><a href="about.html">Our Mission</a></li>
+                    <li><a href="about.html">History</a></li>
+                    <li><a href="about.html">Staff</a></li>
+                    <li><a href="#">Board Members</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Location</a></li>
+                    <li><a href="#">Hours</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#">📘</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📷</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+<!-- Animated background shapes -->
+<div class="animated-shape" style="width: 320px; height: 320px; background: radial-gradient(circle, #6366f1 0%, #3b5bfd 80%, transparent 100%); top: 8vh; left: -80px; animation-delay: 0s;"></div>
+<div class="animated-shape" style="width: 180px; height: 180px; background: radial-gradient(circle, #fbbf24 0%, #f4e04d 80%, transparent 100%); bottom: 10vh; right: 5vw; animation-delay: 3s;"></div>
+<div class="animated-shape" style="width: 220px; height: 220px; background: radial-gradient(circle, #8b5cf6 0%, #6366f1 80%, transparent 100%); top: 60vh; left: 60vw; animation-delay: 6s;"></div>
+</html>

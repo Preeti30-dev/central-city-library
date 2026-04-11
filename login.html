@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Central City Library</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>Central City Library</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html" class="active">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="login-section fadeInUp">
+        <div class="login-container">
+            <!-- Welcome Panel -->
+            <div class="welcome-panel fadeInUp">
+                <h1>Welcome Back</h1>
+                <p>Continue your literary journey with Central City Library. Access your personalized recommendations, manage your loans, and discover new books that match your interests.</p>
+                <p>Join thousands of readers who rely on our comprehensive collection and expert services for their learning and entertainment needs.</p>
+            </div>
+            <div class="login-panel fadeInUp">
+                <p>Access your account to manage loans, place holds, and discover personalized recommendations.</p>
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Enter your password">
+                    </div>
+                    <button type="submit" class="btn-primary login-btn">Sign In</button>
+                </form>
+                <div class="divider">
+                    <span>or</span>
+                </div>
+                <div class="register-prompt">
+                    <p>New to Central City Library?</p>
+                    <button class="btn-secondary" onclick="showRegisterForm()">Create Account</button>
+                </div>
+                <!-- Register Form (Hidden by default) -->
+                <form class="register-form" id="registerForm" style="display: none;">
+                    <h3>Create Account</h3>
+                    <p>Join our community of readers and get instant access to all library services.</p>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required placeholder="First name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required placeholder="Last name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email Address</label>
+                        <input type="email" id="registerEmail" name="registerEmail" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" name="registerPassword" required placeholder="Create a password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm your password">
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="terms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-primary">Create Account</button>
+                    <button type="button" class="btn-secondary back-btn" onclick="hideRegisterForm()">Back to Sign In</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Connected</h2>
+            <p>Join our community of readers and learners. Get the latest updates on new arrivals, upcoming events, and exclusive member offers delivered straight to your inbox.</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn-primary">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="#">Volunteer</a></li>
+                        <li><a href="#">Donate</a></li>
+                        <li><a href="#">Partner with us</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>About CCL</h4>
+                    <ul>
+                        <li><a href="about.html">Our Mission</a></li>
+                        <li><a href="about.html">History</a></li>
+                        <li><a href="about.html">Staff</a></li>
+                        <li><a href="#">Board Members</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Location</a></li>
+                        <li><a href="#">Hours</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Central City Library. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        function showRegisterForm() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+        }
+
+        function hideRegisterForm() {
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real application, this would authenticate the user
+            alert('Login successful! Redirecting to your dashboard...');
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            alert('Account created successfully! Welcome to Central City Library.');
+            hideRegisterForm();
+        });
+    </script>
+</body>
+</html>
+<!-- Animated background shapes -->
+<div class="animated-shape" style="width: 320px; height: 320px; background: radial-gradient(circle, #6366f1 0%, #3b5bfd 80%, transparent 100%); top: 8vh; left: -80px; animation-delay: 0s;"></div>
+<div class="animated-shape" style="width: 180px; height: 180px; background: radial-gradient(circle, #fbbf24 0%, #f4e04d 80%, transparent 100%); bottom: 10vh; right: 5vw; animation-delay: 3s;"></div>
+<div class="animated-shape" style="width: 220px; height: 220px; background: radial-gradient(circle, #8b5cf6 0%, #6366f1 80%, transparent 100%); top: 60vh; left: 60vw; animation-delay: 6s;"></div>
+</html>
